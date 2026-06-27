@@ -1,0 +1,33 @@
+{
+  "name": "virtual-staging-widget",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "dev:3000": "next dev --port 3000",
+    "dev:3001": "next dev --port 3001",
+    "dev:3002": "next dev --port 3002",
+    "build": "next build",
+    "start": "next start",
+    "start:3000": "next start --port 3000",
+    "start:3001": "next start --port 3001",
+    "start:3002": "next start --port 3002",
+    "demo:3": "node scripts/run-demo.mjs",
+    "check": "node scripts/check-project.mjs",
+    "lint": "node scripts/check-project.mjs"
+  },
+  "dependencies": {
+    "next": "15.1.6",
+    "openai": "^4.104.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.5.2",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^3.4.17"
+  }
+}

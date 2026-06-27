@@ -1,0 +1,2135 @@
+{
+  "shops": {
+    "cay-canh": {
+      "id": "shop-cay-canh",
+      "slug": "cay-canh",
+      "name": "Là Nhà Tree House — Cây cảnh",
+      "tagline": "Cây cảnh mini để bàn & decor không gian — Happiness is an inside job",
+      "inspiredBy": "Clone từ shop Là Nhà Tree House (Hà Nội) — tên/giá/ảnh sản phẩm thật",
+      "currency": "VND",
+      "stagingProfile": {
+        "maxProducts": 2,
+        "defaultStyle": "tu-nhien",
+        "prompt": "Store cây cảnh: chỉ thêm 1-2 cây/chậu cây được chọn, đặt tự nhiên vào đúng mặt bàn/kệ/sàn/ban công theo placementHint. Không thêm cây phụ ngoài danh sách, không đổi nội thất lớn, không biến chậu cây thành loại khác.",
+        "questions": [
+          {
+            "id": "loaiCay",
+            "text": "Bạn muốn thử loại cây nào?",
+            "chips": [
+              {
+                "label": "Cây nhỏ để bàn",
+                "value": "small-desk",
+                "tags": {
+                  "viTri": [
+                    "để bàn"
+                  ],
+                  "kichThuoc": [
+                    "mini",
+                    "nhỏ"
+                  ]
+                },
+                "prompt": "Chọn cây nhỏ/mini, đặt gọn trên bàn hoặc cạnh laptop."
+              },
+              {
+                "label": "Cây trong nhà",
+                "value": "indoor",
+                "tags": {
+                  "anhSang": [
+                    "chịu bóng",
+                    "ưa bóng",
+                    "sáng gián tiếp",
+                    "linh hoạt"
+                  ]
+                },
+                "prompt": "Ưu tiên cây trong nhà, chịu bóng hoặc ánh sáng gián tiếp."
+              },
+              {
+                "label": "Cây ngoài trời/ban công",
+                "value": "outdoor",
+                "tags": {
+                  "anhSang": [
+                    "ưa sáng",
+                    "linh hoạt"
+                  ],
+                  "viTri": [
+                    "để sàn",
+                    "treo"
+                  ]
+                },
+                "prompt": "Ưu tiên cây hợp ban công, cửa sổ hoặc vị trí ngoài trời có sáng."
+              }
+            ]
+          },
+          {
+            "id": "kichThuoc",
+            "text": "Bạn muốn cây cỡ nào?",
+            "chips": [
+              {
+                "label": "Mini",
+                "value": "mini",
+                "tags": {
+                  "kichThuoc": [
+                    "mini"
+                  ]
+                },
+                "prompt": "Ưu tiên cây mini rất nhỏ, hợp góc bàn hẹp."
+              },
+              {
+                "label": "Nhỏ gọn",
+                "value": "small",
+                "tags": {
+                  "kichThuoc": [
+                    "nhỏ"
+                  ]
+                },
+                "prompt": "Ưu tiên cây nhỏ gọn, dễ đặt trên bàn hoặc kệ."
+              },
+              {
+                "label": "Vừa/lớn",
+                "value": "medium",
+                "tags": {
+                  "kichThuoc": [
+                    "vừa",
+                    "lớn"
+                  ]
+                },
+                "prompt": "Ưu tiên cây cỡ vừa hoặc lớn để tạo điểm nhấn rõ."
+              }
+            ]
+          },
+          {
+            "id": "viTri",
+            "text": "Bạn muốn đặt cây ở vị trí nào?",
+            "chips": [
+              {
+                "label": "Bàn làm việc",
+                "value": "desk",
+                "tags": {
+                  "viTri": [
+                    "để bàn"
+                  ]
+                },
+                "prompt": "Đặt cây trên bàn làm việc, cạnh laptop hoặc góc bàn."
+              },
+              {
+                "label": "Góc phòng/sàn",
+                "value": "floor",
+                "tags": {
+                  "viTri": [
+                    "để sàn"
+                  ]
+                },
+                "prompt": "Đặt cây trên sàn ở góc phòng hoặc cạnh cửa sổ."
+              },
+              {
+                "label": "Kệ/treo",
+                "value": "shelf",
+                "tags": {
+                  "viTri": [
+                    "treo"
+                  ],
+                  "dacDiem": [
+                    "rủ/treo"
+                  ]
+                },
+                "prompt": "Đặt cây trên kệ cao hoặc treo rủ nhẹ."
+              }
+            ]
+          },
+          {
+            "id": "uuTien",
+            "text": "Bạn ưu tiên cây theo tiêu chí nào?",
+            "chips": [
+              {
+                "label": "Dễ chăm",
+                "value": "easy",
+                "tags": {
+                  "doCham": [
+                    "dễ",
+                    "rất dễ"
+                  ]
+                },
+                "prompt": "Chọn cây dễ chăm, hợp người bận rộn."
+              },
+              {
+                "label": "Tài lộc",
+                "value": "wealth",
+                "tags": {
+                  "congDung": [
+                    "tài lộc",
+                    "tiền tài",
+                    "vượng tài"
+                  ]
+                },
+                "prompt": "Ưu tiên cây mang ý nghĩa tài lộc."
+              },
+              {
+                "label": "Lọc không khí",
+                "value": "air",
+                "tags": {
+                  "congDung": [
+                    "lọc không khí",
+                    "nhả oxy ban đêm"
+                  ]
+                },
+                "prompt": "Ưu tiên cây có công dụng lọc không khí."
+              }
+            ]
+          }
+        ]
+      },
+      "theme": {
+        "bg": "#f3f7f2",
+        "ink": "#1d2a1f",
+        "brand": "#2f8f4e",
+        "brandSoft": "#e1f0e4",
+        "accent": "#b9743a"
+      },
+      "hero": "/images/cay-canh/kim-tien-mini.jpg",
+      "products": [
+        {
+          "id": "kim-tien-mini",
+          "name": "Cây Kim Tiền Mini để bàn",
+          "price": 180000,
+          "category": "plant",
+          "thumbnail": "/images/cay-canh/kim-tien-mini.jpg",
+          "cutoutImage": "/images/cay-canh/kim-tien-mini.jpg",
+          "productUrl": "/cay-canh/products/kim-tien-mini",
+          "placementHint": "đặt trên bàn làm việc, cạnh laptop",
+          "realWidthCm": 18,
+          "desc": "Kim Tiền mini lá xanh bóng, biểu tượng tài lộc. Dễ chăm, chịu bóng, hợp bàn làm việc.",
+          "material": "Cây thật + chậu sứ",
+          "dims": "Cao 25–30 cm",
+          "tags": {
+            "viTri": "để bàn",
+            "anhSang": "chịu bóng",
+            "doCham": "dễ",
+            "menh": [
+              "Mộc",
+              "Hỏa"
+            ],
+            "congDung": [
+              "tài lộc"
+            ],
+            "kichThuoc": "nhỏ",
+            "tamGia": "rẻ"
+          },
+          "tagList": [
+            "để bàn",
+            "chịu bóng",
+            "dễ",
+            "Mộc",
+            "Hỏa",
+            "tài lộc",
+            "nhỏ",
+            "rẻ"
+          ]
+        },
+        {
+          "id": "kim-tien-thuyen",
+          "name": "Chậu Kim Tiền dáng thuyền để bàn",
+          "price": 685000,
+          "category": "plant",
+          "thumbnail": "/images/cay-canh/kim-tien-thuyen.jpg",
+          "cutoutImage": "/images/cay-canh/kim-tien-thuyen.jpg",
+          "productUrl": "/cay-canh/products/kim-tien-thuyen",
+          "placementHint": "đặt trên bàn giám đốc hoặc quầy lễ tân",
+          "realWidthCm": 40,
+          "desc": "Kim Tiền trồng chậu sứ dáng thuyền 'thuận buồm xuôi gió'. Quà khai trương, tân gia ý nghĩa.",
+          "material": "Cây thật + chậu sứ thuyền",
+          "dims": "Dài 40 × cao 45 cm",
+          "tags": {
+            "viTri": "để bàn",
+            "anhSang": "chịu bóng",
+            "doCham": "dễ",
+            "menh": [
+              "Mộc",
+              "Hỏa"
+            ],
+            "congDung": [
+              "tài lộc"
+            ],
+            "dipTang": [
+              "khai trương",
+              "tân gia"
+            ],
+            "kichThuoc": "vừa",
+            "tamGia": "trung"
+          },
+          "tagList": [
+            "để bàn",
+            "chịu bóng",
+            "dễ",
+            "Mộc",
+            "Hỏa",
+            "tài lộc",
+            "khai trương",
+            "tân gia",
+            "vừa",
+            "trung"
+          ]
+        },
+        {
+          "id": "kim-ngan-de-ban",
+          "name": "Cây Kim Ngân 1 thân gốc to để bàn",
+          "price": 285000,
+          "category": "plant",
+          "thumbnail": "/images/cay-canh/kim-ngan-de-ban.jpg",
+          "cutoutImage": "/images/cay-canh/kim-ngan-de-ban.jpg",
+          "productUrl": "/cay-canh/products/kim-ngan-de-ban",
+          "placementHint": "đặt trên bàn làm việc hoặc kệ",
+          "realWidthCm": 25,
+          "desc": "Kim Ngân thân mập, tán lá xoè 5 cánh — biểu tượng tiền tài, may mắn. Dễ chăm.",
+          "material": "Cây thật + chậu sứ",
+          "dims": "Cao 35–45 cm",
+          "tags": {
+            "viTri": "để bàn",
+            "anhSang": "sáng gián tiếp",
+            "doCham": "dễ",
+            "menh": [
+              "Mộc",
+              "Thủy"
+            ],
+            "congDung": [
+              "tiền tài",
+              "may mắn"
+            ],
+            "kichThuoc": "nhỏ",
+            "tamGia": "rẻ"
+          },
+          "tagList": [
+            "để bàn",
+            "sáng gián tiếp",
+            "dễ",
+            "Mộc",
+            "Thủy",
+            "tiền tài",
+            "may mắn",
+            "nhỏ",
+            "rẻ"
+          ]
+        },
+        {
+          "id": "kim-ngan-lon",
+          "name": "Cây Kim Ngân 1 thân gốc to size lớn",
+          "price": 550000,
+          "category": "plant",
+          "thumbnail": "/images/cay-canh/kim-ngan-lon.jpg",
+          "cutoutImage": "/images/cay-canh/kim-ngan-lon.jpg",
+          "productUrl": "/cay-canh/products/kim-ngan-lon",
+          "placementHint": "đặt sàn cạnh bàn làm việc hoặc góc phòng",
+          "realWidthCm": 35,
+          "desc": "Kim Ngân gốc to, tán cao — vượng tài, hợp văn phòng, sảnh công ty.",
+          "material": "Cây thật + chậu sứ",
+          "dims": "Cao 55–70 cm",
+          "tags": {
+            "viTri": "để sàn",
+            "anhSang": "sáng gián tiếp",
+            "doCham": "dễ",
+            "menh": [
+              "Mộc",
+              "Thủy"
+            ],
+            "congDung": [
+              "vượng tài"
+            ],
+            "kichThuoc": "vừa",
+            "tamGia": "trung"
+          },
+          "tagList": [
+            "để sàn",
+            "sáng gián tiếp",
+            "dễ",
+            "Mộc",
+            "Thủy",
+            "vượng tài",
+            "vừa",
+            "trung"
+          ]
+        },
+        {
+          "id": "luoi-ho-de-san",
+          "name": "Cây Lưỡi Hổ để sàn",
+          "price": 725000,
+          "category": "plant",
+          "thumbnail": "/images/cay-canh/luoi-ho-de-san.jpg",
+          "cutoutImage": "/images/cay-canh/luoi-ho-de-san.jpg",
+          "productUrl": "/cay-canh/products/luoi-ho-de-san",
+          "placementHint": "đặt sàn cạnh cửa sổ, góc phòng hoặc lối vào",
+          "realWidthCm": 40,
+          "desc": "Lưỡi Hổ thanh lọc không khí, nhả oxy ban đêm. Dáng đứng khoẻ, gần như không cần chăm.",
+          "material": "Cây thật + chậu lớn",
+          "dims": "Cao 70–90 cm",
+          "tags": {
+            "viTri": "để sàn",
+            "anhSang": "linh hoạt",
+            "doCham": "rất dễ",
+            "menh": [
+              "Thổ",
+              "Kim"
+            ],
+            "congDung": [
+              "lọc không khí",
+              "nhả oxy ban đêm"
+            ],
+            "kichThuoc": "vừa",
+            "tamGia": "trung"
+          },
+          "tagList": [
+            "để sàn",
+            "linh hoạt",
+            "rất dễ",
+            "Thổ",
+            "Kim",
+            "lọc không khí",
+            "nhả oxy ban đêm",
+            "vừa",
+            "trung"
+          ]
+        },
+        {
+          "id": "cay-van-tue",
+          "name": "Cây Vạn Tuế size M",
+          "price": 325000,
+          "category": "plant",
+          "thumbnail": "/images/cay-canh/cay-van-tue.jpg",
+          "cutoutImage": "/images/cay-canh/cay-van-tue.jpg",
+          "productUrl": "/cay-canh/products/cay-van-tue",
+          "placementHint": "đặt bàn làm việc, quầy hoặc kệ",
+          "realWidthCm": 30,
+          "desc": "Vạn Tuế dáng cọ mini, biểu tượng trường thọ & vững vàng. Lá cứng cáp, sống bền.",
+          "material": "Cây thật + chậu sứ",
+          "dims": "Cao 35–45 cm",
+          "tags": {
+            "viTri": "để bàn",
+            "anhSang": "ưa sáng",
+            "doCham": "dễ",
+            "menh": [
+              "Mộc"
+            ],
+            "congDung": [
+              "trường thọ"
+            ],
+            "kichThuoc": "vừa",
+            "tamGia": "trung"
+          },
+          "tagList": [
+            "để bàn",
+            "ưa sáng",
+            "dễ",
+            "Mộc",
+            "trường thọ",
+            "vừa",
+            "trung"
+          ]
+        },
+        {
+          "id": "hong-mon",
+          "name": "Cây Hồng Môn hoa hồng",
+          "price": 265000,
+          "category": "plant",
+          "thumbnail": "/images/cay-canh/hong-mon.jpg",
+          "cutoutImage": "/images/cay-canh/hong-mon.jpg",
+          "productUrl": "/cay-canh/products/hong-mon",
+          "placementHint": "đặt bàn tiếp khách, quầy lễ tân",
+          "realWidthCm": 25,
+          "desc": "Hồng Môn hoa hồng tươi tắn, ý nghĩa may mắn & nhiệt thành. Trang trí bàn nổi bật.",
+          "material": "Cây thật + chậu sứ",
+          "dims": "Cao 35–40 cm",
+          "tags": {
+            "viTri": "để bàn",
+            "anhSang": "sáng gián tiếp",
+            "doCham": "trung bình",
+            "menh": [
+              "Hỏa"
+            ],
+            "congDung": [
+              "may mắn"
+            ],
+            "kichThuoc": "nhỏ",
+            "tamGia": "rẻ"
+          },
+          "tagList": [
+            "để bàn",
+            "sáng gián tiếp",
+            "trung bình",
+            "Hỏa",
+            "may mắn",
+            "nhỏ",
+            "rẻ"
+          ]
+        },
+        {
+          "id": "van-loc",
+          "name": "Chậu Vạn Lộc mix cẩm nhung",
+          "price": 320000,
+          "category": "plant",
+          "thumbnail": "/images/cay-canh/van-loc.jpg",
+          "cutoutImage": "/images/cay-canh/van-loc.jpg",
+          "productUrl": "/cay-canh/products/van-loc",
+          "placementHint": "đặt bàn làm việc hoặc kệ trang trí",
+          "realWidthCm": 22,
+          "desc": "Vạn Lộc lá đỏ hồng rực rỡ — 'vạn sự như ý, lộc đầy nhà'. Mix cẩm nhung xanh bắt mắt.",
+          "material": "Cây thật + chậu sứ",
+          "dims": "Cao 25–35 cm",
+          "tags": {
+            "viTri": "để bàn",
+            "anhSang": "sáng gián tiếp",
+            "doCham": "dễ",
+            "menh": [
+              "Hỏa",
+              "Thổ"
+            ],
+            "congDung": [
+              "lộc",
+              "may mắn"
+            ],
+            "kichThuoc": "nhỏ",
+            "tamGia": "trung"
+          },
+          "tagList": [
+            "để bàn",
+            "sáng gián tiếp",
+            "dễ",
+            "Hỏa",
+            "Thổ",
+            "lộc",
+            "may mắn",
+            "nhỏ",
+            "trung"
+          ]
+        },
+        {
+          "id": "truc-phu-quy",
+          "name": "Cây Trúc Phú Quý (phát tài)",
+          "price": 215000,
+          "category": "plant",
+          "thumbnail": "/images/cay-canh/truc-phu-quy.jpg",
+          "cutoutImage": "/images/cay-canh/truc-phu-quy.jpg",
+          "productUrl": "/cay-canh/products/truc-phu-quy",
+          "placementHint": "đặt bàn làm việc, quầy thu ngân",
+          "realWidthCm": 20,
+          "desc": "Trúc Phú Quý thân thẳng vươn cao — phát tài phát lộc, thăng tiến. Thuỷ sinh dễ chăm.",
+          "material": "Cây thật + chậu thuỷ sinh",
+          "dims": "Cao 30–40 cm",
+          "tags": {
+            "viTri": "để bàn",
+            "anhSang": "linh hoạt",
+            "doCham": "rất dễ",
+            "menh": [
+              "Mộc",
+              "Thủy"
+            ],
+            "congDung": [
+              "phát tài",
+              "thăng tiến"
+            ],
+            "kichThuoc": "nhỏ",
+            "tamGia": "rẻ"
+          },
+          "tagList": [
+            "để bàn",
+            "linh hoạt",
+            "rất dễ",
+            "Mộc",
+            "Thủy",
+            "phát tài",
+            "thăng tiến",
+            "nhỏ",
+            "rẻ"
+          ]
+        },
+        {
+          "id": "duoi-cong",
+          "name": "Cây Đuôi Công Khổng Tước",
+          "price": 265000,
+          "category": "plant",
+          "thumbnail": "/images/cay-canh/duoi-cong.jpg",
+          "cutoutImage": "/images/cay-canh/duoi-cong.jpg",
+          "productUrl": "/cay-canh/products/duoi-cong",
+          "placementHint": "đặt bàn làm việc hoặc kệ sách",
+          "realWidthCm": 25,
+          "desc": "Đuôi Công lá vằn nghệ thuật như lông công. Ưa bóng, tạo điểm nhấn lạ mắt cho góc làm việc.",
+          "material": "Cây thật + chậu sứ",
+          "dims": "Cao 30–40 cm",
+          "tags": {
+            "viTri": "để bàn",
+            "anhSang": "ưa bóng",
+            "doCham": "trung bình",
+            "menh": [
+              "Mộc"
+            ],
+            "congDung": [
+              "trang trí"
+            ],
+            "kichThuoc": "nhỏ",
+            "tamGia": "rẻ"
+          },
+          "tagList": [
+            "để bàn",
+            "ưa bóng",
+            "trung bình",
+            "Mộc",
+            "trang trí",
+            "nhỏ",
+            "rẻ"
+          ]
+        },
+        {
+          "id": "hanh-phuc-luoi-ho",
+          "name": "Cây Hạnh Phúc mix Lưỡi Hổ để bàn",
+          "price": 750000,
+          "category": "plant",
+          "thumbnail": "/images/cay-canh/hanh-phuc-luoi-ho.jpg",
+          "cutoutImage": "/images/cay-canh/hanh-phuc-luoi-ho.jpg",
+          "productUrl": "/cay-canh/products/hanh-phuc-luoi-ho",
+          "placementHint": "đặt bàn làm việc lớn hoặc quầy",
+          "realWidthCm": 35,
+          "desc": "Tiểu cảnh Cây Hạnh Phúc phối Lưỡi Hổ trong chậu sứ — xanh mát, ý nghĩa an yên.",
+          "material": "Tiểu cảnh cây thật + chậu sứ",
+          "dims": "Cao 40–50 cm",
+          "tags": {
+            "viTri": "để bàn",
+            "anhSang": "linh hoạt",
+            "doCham": "dễ",
+            "menh": [
+              "Mộc",
+              "Thổ"
+            ],
+            "congDung": [
+              "an yên",
+              "lọc không khí"
+            ],
+            "kichThuoc": "vừa",
+            "tamGia": "trung"
+          },
+          "tagList": [
+            "để bàn",
+            "linh hoạt",
+            "dễ",
+            "Mộc",
+            "Thổ",
+            "an yên",
+            "lọc không khí",
+            "vừa",
+            "trung"
+          ]
+        },
+        {
+          "id": "hanh-phuc-cam-nhung",
+          "name": "Cây Hạnh Phúc mix Cẩm Nhung để bàn",
+          "price": 460000,
+          "category": "plant",
+          "thumbnail": "/images/cay-canh/hanh-phuc-cam-nhung.jpg",
+          "cutoutImage": "/images/cay-canh/hanh-phuc-cam-nhung.jpg",
+          "productUrl": "/cay-canh/products/hanh-phuc-cam-nhung",
+          "placementHint": "đặt bàn làm việc hoặc bàn trà",
+          "realWidthCm": 28,
+          "desc": "Cây Hạnh Phúc phối cẩm nhung nhiều màu, tiểu cảnh xinh xắn cho bàn làm việc.",
+          "material": "Tiểu cảnh cây thật + chậu sứ",
+          "dims": "Cao 30–40 cm",
+          "tags": {
+            "viTri": "để bàn",
+            "anhSang": "ưa bóng",
+            "doCham": "trung bình",
+            "menh": [
+              "Mộc"
+            ],
+            "congDung": [
+              "trang trí"
+            ],
+            "kichThuoc": "nhỏ",
+            "tamGia": "trung"
+          },
+          "tagList": [
+            "để bàn",
+            "ưa bóng",
+            "trung bình",
+            "Mộc",
+            "trang trí",
+            "nhỏ",
+            "trung"
+          ]
+        },
+        {
+          "id": "cam-nhung",
+          "name": "Cây Cẩm Nhung (lá may mắn)",
+          "price": 130000,
+          "category": "plant",
+          "thumbnail": "/images/cay-canh/cam-nhung.jpg",
+          "cutoutImage": "/images/cay-canh/cam-nhung.jpg",
+          "productUrl": "/cay-canh/products/cam-nhung",
+          "placementHint": "đặt bàn làm việc, cạnh màn hình",
+          "realWidthCm": 12,
+          "desc": "Cẩm Nhung (fittonia) lá gân nổi xinh xắn, nhỏ gọn. Điểm xanh dễ thương cho góc nhỏ.",
+          "material": "Cây thật + chậu sứ mini",
+          "dims": "Cao 12–16 cm",
+          "tags": {
+            "viTri": "để bàn",
+            "anhSang": "ưa bóng",
+            "doCham": "dễ",
+            "menh": [
+              "Mộc"
+            ],
+            "congDung": [
+              "may mắn"
+            ],
+            "kichThuoc": "mini",
+            "tamGia": "rẻ"
+          },
+          "tagList": [
+            "để bàn",
+            "ưa bóng",
+            "dễ",
+            "Mộc",
+            "may mắn",
+            "mini",
+            "rẻ"
+          ]
+        },
+        {
+          "id": "sen-da-may-man",
+          "name": "Sen Đá mix lá may mắn",
+          "price": 125000,
+          "category": "plant",
+          "thumbnail": "/images/cay-canh/sen-da-may-man.jpg",
+          "cutoutImage": "/images/cay-canh/sen-da-may-man.jpg",
+          "productUrl": "/cay-canh/products/sen-da-may-man",
+          "placementHint": "đặt bàn làm việc, cạnh laptop",
+          "realWidthCm": 12,
+          "desc": "Sen đá mọng nước phối lá may mắn trong chậu sứ. Tưới ít, sống khoẻ, hợp bàn làm việc.",
+          "material": "Cây thật + chậu sứ mini",
+          "dims": "Cao 10–14 cm",
+          "tags": {
+            "viTri": "để bàn",
+            "anhSang": "ưa sáng",
+            "doCham": "dễ",
+            "menh": [
+              "Kim",
+              "Thổ"
+            ],
+            "congDung": [
+              "may mắn"
+            ],
+            "kichThuoc": "mini",
+            "tamGia": "rẻ"
+          },
+          "tagList": [
+            "để bàn",
+            "ưa sáng",
+            "dễ",
+            "Kim",
+            "Thổ",
+            "may mắn",
+            "mini",
+            "rẻ"
+          ]
+        },
+        {
+          "id": "xuong-rong-gio",
+          "name": "Chậu xương rồng mix hình giỏ hoa",
+          "price": 250000,
+          "category": "plant",
+          "thumbnail": "/images/cay-canh/xuong-rong-gio.jpg",
+          "cutoutImage": "/images/cay-canh/xuong-rong-gio.jpg",
+          "productUrl": "/cay-canh/products/xuong-rong-gio",
+          "placementHint": "đặt bàn làm việc hoặc kệ trang trí",
+          "realWidthCm": 20,
+          "desc": "Giỏ xương rồng & sen đá mix tiểu cảnh đáng yêu, kèm linh vật mini. Quà tặng dễ thương.",
+          "material": "Cây thật + giỏ trang trí",
+          "dims": "Rộng 20 × cao 18 cm",
+          "tags": {
+            "viTri": "để bàn",
+            "anhSang": "ưa sáng",
+            "doCham": "rất dễ",
+            "menh": [
+              "Kim"
+            ],
+            "congDung": [
+              "trang trí",
+              "quà tặng"
+            ],
+            "kichThuoc": "nhỏ",
+            "tamGia": "rẻ"
+          },
+          "tagList": [
+            "để bàn",
+            "ưa sáng",
+            "rất dễ",
+            "Kim",
+            "trang trí",
+            "quà tặng",
+            "nhỏ",
+            "rẻ"
+          ]
+        },
+        {
+          "id": "chuoi-tim",
+          "name": "Giỏ chuỗi tim (string of hearts)",
+          "price": 190000,
+          "category": "plant",
+          "thumbnail": "/images/cay-canh/chuoi-tim.jpg",
+          "cutoutImage": "/images/cay-canh/chuoi-tim.jpg",
+          "productUrl": "/cay-canh/products/chuoi-tim",
+          "placementHint": "treo hoặc đặt kệ cao cho dây rủ xuống",
+          "realWidthCm": 18,
+          "desc": "Chuỗi Tim lá tim bạc rủ dài mềm mại. Treo cửa sổ, kệ sách tạo mảng xanh lãng mạn.",
+          "material": "Cây thật + giỏ treo",
+          "dims": "Dài buông 40–60 cm",
+          "tags": {
+            "viTri": "treo",
+            "anhSang": "sáng gián tiếp",
+            "doCham": "dễ",
+            "menh": [
+              "Mộc"
+            ],
+            "congDung": [
+              "trang trí"
+            ],
+            "dacDiem": "rủ/treo",
+            "kichThuoc": "nhỏ",
+            "tamGia": "rẻ"
+          },
+          "tagList": [
+            "treo",
+            "sáng gián tiếp",
+            "dễ",
+            "Mộc",
+            "trang trí",
+            "rủ/treo",
+            "nhỏ",
+            "rẻ"
+          ]
+        }
+      ]
+    },
+    "decor-vang": {
+      "id": "shop-decor-vang",
+      "slug": "decor-vang",
+      "name": "Ngọc Tâm An — Decor mạ vàng",
+      "tagline": "Quà tặng phong thuỷ & decor mạ vàng 24K cho phòng khách, bàn làm việc và sảnh lễ tân",
+      "inspiredBy": "Clone từ shop Ngọc Tâm An — đồ mạ vàng/dát vàng 24K, ảnh sản phẩm lưu local",
+      "currency": "VND",
+      "stagingProfile": {
+        "maxProducts": 3,
+        "defaultStyle": "luxury",
+        "compositionMode": "primary-plus-support",
+        "prompt": "Store decor mạ vàng: món đầu tiên là sản phẩm chính. Có thể thêm 1-2 đồ trang trí khác cùng cửa hàng trong danh sách để bố cục đỡ trống và làm nổi sản phẩm chính. Không thêm đồ ngoài cửa hàng, không thêm tượng/tranh/đồ vàng không nằm trong danh sách gửi lên, không làm rối bố cục.",
+        "questions": [
+          {
+            "id": "phongHop",
+            "text": "Bạn muốn đặt decor vàng ở không gian nào?",
+            "chips": [
+              {
+                "label": "Phòng khách",
+                "value": "living",
+                "tags": {
+                  "phongHop": [
+                    "phòng khách"
+                  ]
+                },
+                "prompt": "Đặt như cụm decor trên kệ tivi, bàn console hoặc sau sofa."
+              },
+              {
+                "label": "Bàn làm việc",
+                "value": "desk",
+                "tags": {
+                  "phongHop": [
+                    "bàn làm việc",
+                    "văn phòng"
+                  ]
+                },
+                "prompt": "Đặt sản phẩm chính trên bàn làm việc hoặc kệ sau bàn giám đốc, đồ phụ nhỏ hơn."
+              },
+              {
+                "label": "Sảnh/lễ tân",
+                "value": "lobby",
+                "tags": {
+                  "phongHop": [
+                    "lễ tân",
+                    "lối vào"
+                  ]
+                },
+                "prompt": "Đặt thành cụm decor ở quầy lễ tân, sảnh hoặc lối vào."
+              }
+            ]
+          },
+          {
+            "id": "yNghia",
+            "text": "Bạn muốn nhấn mạnh ý nghĩa nào?",
+            "chips": [
+              {
+                "label": "Tài lộc",
+                "value": "wealth",
+                "tags": {
+                  "congDung": [
+                    "tài lộc",
+                    "vượng tài"
+                  ]
+                },
+                "prompt": "Ưu tiên vật phẩm phong thuỷ tài lộc, phối thêm món phụ cùng chủ đề nếu phù hợp."
+              },
+              {
+                "label": "Thuận lợi kinh doanh",
+                "value": "business",
+                "tags": {
+                  "congDung": [
+                    "thuận lợi",
+                    "thuận buồm xuôi gió",
+                    "thành công"
+                  ]
+                },
+                "prompt": "Ưu tiên thuyền buồm hoặc chủ đề doanh nhân, bố cục trang trọng."
+              },
+              {
+                "label": "Sang trọng",
+                "value": "luxury",
+                "tags": {
+                  "phongCach": [
+                    "luxury"
+                  ]
+                },
+                "prompt": "Ưu tiên cụm decor sang trọng, ít món nhưng có điểm nhấn vàng rõ."
+              },
+              {
+                "label": "Truyền thống",
+                "value": "classic",
+                "tags": {
+                  "phongCach": [
+                    "truyền thống"
+                  ]
+                },
+                "prompt": "Ưu tiên tranh/tượng mang sắc thái truyền thống Việt."
+              }
+            ]
+          },
+          {
+            "id": "tamGia",
+            "text": "Bạn muốn gợi ý trong tầm giá nào?",
+            "chips": [
+              {
+                "label": "Dễ mua",
+                "value": "budget",
+                "tags": {
+                  "tamGia": [
+                    "rẻ",
+                    "trung"
+                  ]
+                },
+                "prompt": "Ưu tiên món giá dễ mua, phù hợp quà tặng nhanh."
+              },
+              {
+                "label": "Cao cấp",
+                "value": "premium",
+                "tags": {
+                  "tamGia": [
+                    "cao",
+                    "premium"
+                  ]
+                },
+                "prompt": "Ưu tiên món cao cấp, làm điểm nhấn sang trọng."
+              },
+              {
+                "label": "Không quan trọng",
+                "value": "any",
+                "tags": {},
+                "prompt": "Không giới hạn giá, ưu tiên món hợp không gian nhất."
+              }
+            ]
+          }
+        ]
+      },
+      "theme": {
+        "bg": "#fbf7ef",
+        "ink": "#2c2115",
+        "brand": "#b7791f",
+        "brandSoft": "#f4e7c8",
+        "accent": "#7a3f16"
+      },
+      "hero": "/images/decor-vang/vang-thuyen-buom-cn.jpg",
+      "products": [
+        {
+          "id": "vang-chau-hoa-lan2",
+          "name": "Chậu hoa lan mạ vàng 24K",
+          "price": 1850000,
+          "category": "decor",
+          "placementHint": "đặt trên bàn console, kệ tivi hoặc bàn làm việc sang trọng",
+          "realWidthCm": 32,
+          "desc": "Chậu hoa lan phủ sắc vàng nổi bật, hợp làm điểm nhấn trên bàn tiếp khách, kệ trang trí hoặc quà tặng tân gia.",
+          "material": "Kim loại mạ vàng 24K + đế gỗ",
+          "dims": "Rộng 32 × cao 45 cm",
+          "tags": {
+            "phongCach": "luxury, phong thuỷ",
+            "mau": [
+              "vàng"
+            ],
+            "phongHop": [
+              "phòng khách",
+              "văn phòng"
+            ],
+            "dipTang": [
+              "tân gia",
+              "khai trương"
+            ]
+          },
+          "thumbnail": "/images/decor-vang/vang-chau-hoa-lan2.jpg",
+          "cutoutImage": "/images/decor-vang/vang-chau-hoa-lan2.jpg",
+          "productUrl": "/decor-vang/products/vang-chau-hoa-lan2"
+        },
+        {
+          "id": "vang-chau-kim-ngan",
+          "name": "Chậu kim ngân mạ vàng tài lộc",
+          "price": 1250000,
+          "category": "plant",
+          "placementHint": "đặt trên bàn làm việc, quầy lễ tân hoặc kệ trang trí",
+          "realWidthCm": 25,
+          "desc": "Cây kim ngân mạ vàng biểu tượng tiền tài, dáng nhỏ gọn để bàn, phù hợp quà khai trương.",
+          "material": "Lá kim loại mạ vàng 24K + chậu sứ",
+          "dims": "Rộng 25 × cao 32 cm",
+          "tags": {
+            "phongCach": "phong thuỷ",
+            "mau": [
+              "vàng"
+            ],
+            "phongHop": [
+              "bàn làm việc",
+              "lễ tân"
+            ],
+            "congDung": [
+              "tài lộc"
+            ]
+          },
+          "thumbnail": "/images/decor-vang/vang-chau-kim-ngan.jpg",
+          "cutoutImage": "/images/decor-vang/vang-chau-kim-ngan.jpg",
+          "productUrl": "/decor-vang/products/vang-chau-kim-ngan"
+        },
+        {
+          "id": "vang-doi-chim-cong",
+          "name": "Đôi chim công phú quý mạ vàng",
+          "price": 1950000,
+          "category": "decor",
+          "placementHint": "đặt trên kệ phòng khách hoặc tủ trưng bày",
+          "realWidthCm": 38,
+          "desc": "Đôi chim công tượng trưng cho vẻ đẹp, thịnh vượng và hạnh phúc viên mãn.",
+          "material": "Kim loại mạ vàng 24K + pha lê",
+          "dims": "Rộng 38 × cao 28 cm",
+          "tags": {
+            "phongCach": "luxury, phong thuỷ",
+            "mau": [
+              "vàng"
+            ],
+            "phongHop": [
+              "phòng khách"
+            ],
+            "congDung": [
+              "phú quý",
+              "hạnh phúc"
+            ]
+          },
+          "thumbnail": "/images/decor-vang/vang-doi-chim-cong.jpg",
+          "cutoutImage": "/images/decor-vang/vang-doi-chim-cong.jpg",
+          "productUrl": "/decor-vang/products/vang-doi-chim-cong"
+        },
+        {
+          "id": "vang-ga-trong",
+          "name": "Tượng gà trống mạ vàng 24K",
+          "price": 1450000,
+          "category": "decor",
+          "placementHint": "đặt trên bàn làm việc hoặc kệ sau lưng bàn giám đốc",
+          "realWidthCm": 28,
+          "desc": "Gà trống dáng oai vệ, biểu tượng bản lĩnh và sự tỉnh thức trong công việc.",
+          "material": "Kim loại mạ vàng 24K + đế gỗ",
+          "dims": "Rộng 28 × cao 35 cm",
+          "tags": {
+            "phongCach": "phong thuỷ",
+            "mau": [
+              "vàng"
+            ],
+            "phongHop": [
+              "văn phòng",
+              "bàn làm việc"
+            ],
+            "congDung": [
+              "uy tín",
+              "may mắn"
+            ]
+          },
+          "thumbnail": "/images/decor-vang/vang-ga-trong.jpg",
+          "cutoutImage": "/images/decor-vang/vang-ga-trong.jpg",
+          "productUrl": "/decor-vang/products/vang-ga-trong"
+        },
+        {
+          "id": "vang-ho-sen-ca-chep",
+          "name": "Hồ sen cá chép mạ vàng",
+          "price": 1680000,
+          "category": "decor",
+          "placementHint": "đặt bàn trà, kệ tivi hoặc quầy tiếp khách",
+          "realWidthCm": 35,
+          "desc": "Cá chép và hoa sen gợi tài lộc, thanh cao và sự sung túc trong gia đình.",
+          "material": "Kim loại mạ vàng 24K + đế kính",
+          "dims": "Rộng 35 × cao 22 cm",
+          "tags": {
+            "phongCach": "phong thuỷ",
+            "mau": [
+              "vàng"
+            ],
+            "phongHop": [
+              "phòng khách"
+            ],
+            "menh": [
+              "Thủy",
+              "Kim"
+            ],
+            "congDung": [
+              "tài lộc"
+            ]
+          },
+          "thumbnail": "/images/decor-vang/vang-ho-sen-ca-chep.jpg",
+          "cutoutImage": "/images/decor-vang/vang-ho-sen-ca-chep.jpg",
+          "productUrl": "/decor-vang/products/vang-ho-sen-ca-chep"
+        },
+        {
+          "id": "vang-hoa-lan",
+          "name": "Bình hoa lan hồ điệp mạ vàng",
+          "price": 1550000,
+          "category": "decor",
+          "placementHint": "đặt trên bàn console, bàn lễ tân hoặc kệ phòng khách",
+          "realWidthCm": 30,
+          "desc": "Hoa lan hồ điệp mạ vàng dáng mềm, sang trọng, dễ phối với không gian hiện đại.",
+          "material": "Kim loại mạ vàng 24K + chậu sứ",
+          "dims": "Rộng 30 × cao 40 cm",
+          "tags": {
+            "phongCach": "luxury, hiện đại",
+            "mau": [
+              "vàng"
+            ],
+            "phongHop": [
+              "phòng khách",
+              "lễ tân"
+            ],
+            "dipTang": [
+              "tân gia"
+            ]
+          },
+          "thumbnail": "/images/decor-vang/vang-hoa-lan.jpg",
+          "cutoutImage": "/images/decor-vang/vang-hoa-lan.jpg",
+          "productUrl": "/decor-vang/products/vang-hoa-lan"
+        },
+        {
+          "id": "vang-kim-ngan-loc",
+          "name": "Cây kim ngân lộc mạ vàng 24K",
+          "price": 2180000,
+          "category": "plant",
+          "placementHint": "đặt trên bàn giám đốc hoặc tủ trưng bày",
+          "realWidthCm": 36,
+          "desc": "Cây kim ngân lộc tán vàng đầy đặn, tạo điểm nhấn tài lộc cho phòng làm việc.",
+          "material": "Lá kim loại mạ vàng 24K + đế gỗ",
+          "dims": "Rộng 36 × cao 45 cm",
+          "tags": {
+            "phongCach": "phong thuỷ, luxury",
+            "mau": [
+              "vàng"
+            ],
+            "phongHop": [
+              "văn phòng",
+              "phòng khách"
+            ],
+            "congDung": [
+              "vượng tài"
+            ]
+          },
+          "thumbnail": "/images/decor-vang/vang-kim-ngan-loc.jpg",
+          "cutoutImage": "/images/decor-vang/vang-kim-ngan-loc.jpg",
+          "productUrl": "/decor-vang/products/vang-kim-ngan-loc"
+        },
+        {
+          "id": "vang-thuyen-buom-cn",
+          "name": "Thuyền buồm doanh nhân mạ vàng",
+          "price": 2450000,
+          "category": "decor",
+          "placementHint": "đặt sau bàn làm việc, quầy lễ tân hoặc kệ phòng khách",
+          "realWidthCm": 45,
+          "desc": "Thuyền buồm căng gió tượng trưng cho thuận buồm xuôi gió, hợp văn phòng và quà khai trương.",
+          "material": "Kim loại mạ vàng 24K + đế gỗ",
+          "dims": "Dài 45 × cao 38 cm",
+          "tags": {
+            "phongCach": "phong thuỷ, doanh nhân",
+            "mau": [
+              "vàng"
+            ],
+            "phongHop": [
+              "văn phòng",
+              "lễ tân"
+            ],
+            "congDung": [
+              "thuận lợi",
+              "tài lộc"
+            ]
+          },
+          "thumbnail": "/images/decor-vang/vang-thuyen-buom-cn.jpg",
+          "cutoutImage": "/images/decor-vang/vang-thuyen-buom-cn.jpg",
+          "productUrl": "/decor-vang/products/vang-thuyen-buom-cn"
+        },
+        {
+          "id": "vang-thuyen-buom-nho",
+          "name": "Thuyền buồm nhỏ mạ vàng 24K",
+          "price": 890000,
+          "category": "decor",
+          "placementHint": "đặt trên bàn làm việc hoặc kệ nhỏ",
+          "realWidthCm": 25,
+          "desc": "Phiên bản thuyền buồm nhỏ gọn, hợp bàn làm việc cá nhân và góc decor tài lộc.",
+          "material": "Kim loại mạ vàng 24K + đế gỗ",
+          "dims": "Dài 25 × cao 22 cm",
+          "tags": {
+            "phongCach": "phong thuỷ",
+            "mau": [
+              "vàng"
+            ],
+            "phongHop": [
+              "bàn làm việc"
+            ],
+            "congDung": [
+              "thuận buồm xuôi gió"
+            ]
+          },
+          "thumbnail": "/images/decor-vang/vang-thuyen-buom-nho.jpg",
+          "cutoutImage": "/images/decor-vang/vang-thuyen-buom-nho.jpg",
+          "productUrl": "/decor-vang/products/vang-thuyen-buom-nho"
+        },
+        {
+          "id": "vang-tranh-hoa-sen",
+          "name": "Tranh hoa sen mạ vàng 24K",
+          "price": 1980000,
+          "category": "art",
+          "placementHint": "treo phòng khách, phòng trà hoặc sau bàn tiếp khách",
+          "realWidthCm": 70,
+          "desc": "Hoa sen mạ vàng trên nền sáng, mang cảm giác thanh tịnh, sang trọng và thuần Việt.",
+          "material": "Tranh mạ vàng 24K + khung gỗ",
+          "dims": "70 × 50 cm",
+          "tags": {
+            "phongCach": "truyền thống, luxury",
+            "mau": [
+              "vàng"
+            ],
+            "phongHop": [
+              "phòng khách",
+              "phòng trà"
+            ],
+            "congDung": [
+              "thanh cao"
+            ]
+          },
+          "thumbnail": "/images/decor-vang/vang-tranh-hoa-sen.jpg",
+          "cutoutImage": "/images/decor-vang/vang-tranh-hoa-sen.jpg",
+          "productUrl": "/decor-vang/products/vang-tranh-hoa-sen"
+        },
+        {
+          "id": "vang-tranh-ma-dao",
+          "name": "Tranh mã đáo thành công mạ vàng",
+          "price": 2950000,
+          "category": "art",
+          "placementHint": "treo sau sofa, phòng làm việc hoặc sảnh công ty",
+          "realWidthCm": 90,
+          "desc": "Mã đáo thành công mạ vàng, chủ đề mạnh mẽ cho không gian doanh nhân và văn phòng.",
+          "material": "Tranh mạ vàng 24K + khung gỗ",
+          "dims": "90 × 60 cm",
+          "tags": {
+            "phongCach": "phong thuỷ, doanh nhân",
+            "mau": [
+              "vàng"
+            ],
+            "phongHop": [
+              "văn phòng",
+              "phòng khách"
+            ],
+            "congDung": [
+              "thành công"
+            ]
+          },
+          "thumbnail": "/images/decor-vang/vang-tranh-ma-dao.jpg",
+          "cutoutImage": "/images/decor-vang/vang-tranh-ma-dao.jpg",
+          "productUrl": "/decor-vang/products/vang-tranh-ma-dao"
+        },
+        {
+          "id": "vang-tranh-tam-sen",
+          "name": "Tranh tam sen mạ vàng 24K",
+          "price": 2350000,
+          "category": "art",
+          "placementHint": "treo phòng khách, phòng trà hoặc lối vào",
+          "realWidthCm": 80,
+          "desc": "Bộ tam sen mạ vàng bố cục cân đối, hợp tường trung tâm và không gian tiếp khách.",
+          "material": "Tranh mạ vàng 24K + khung gỗ",
+          "dims": "80 × 55 cm",
+          "tags": {
+            "phongCach": "truyền thống, thanh lịch",
+            "mau": [
+              "vàng"
+            ],
+            "phongHop": [
+              "phòng khách",
+              "lối vào"
+            ],
+            "congDung": [
+              "thanh cao"
+            ]
+          },
+          "thumbnail": "/images/decor-vang/vang-tranh-tam-sen.jpg",
+          "cutoutImage": "/images/decor-vang/vang-tranh-tam-sen.jpg",
+          "productUrl": "/decor-vang/products/vang-tranh-tam-sen"
+        },
+        {
+          "id": "vang-tranh-thuyen-dung",
+          "name": "Tranh thuyền buồm đứng mạ vàng",
+          "price": 2480000,
+          "category": "art",
+          "placementHint": "treo phòng làm việc hoặc khoảng tường hẹp cạnh bàn",
+          "realWidthCm": 55,
+          "desc": "Tranh thuyền buồm khổ đứng, phù hợp mảng tường hẹp, biểu tượng thuận lợi trong kinh doanh.",
+          "material": "Tranh mạ vàng 24K + khung gỗ",
+          "dims": "55 × 80 cm",
+          "tags": {
+            "phongCach": "phong thuỷ",
+            "mau": [
+              "vàng"
+            ],
+            "phongHop": [
+              "văn phòng"
+            ],
+            "congDung": [
+              "thuận lợi"
+            ]
+          },
+          "thumbnail": "/images/decor-vang/vang-tranh-thuyen-dung.jpg",
+          "cutoutImage": "/images/decor-vang/vang-tranh-thuyen-dung.jpg",
+          "productUrl": "/decor-vang/products/vang-tranh-thuyen-dung"
+        },
+        {
+          "id": "vang-tranh-thuyen-tron",
+          "name": "Tranh thuyền buồm tròn mạ vàng",
+          "price": 2180000,
+          "category": "art",
+          "placementHint": "treo lối vào, phòng khách hoặc sau bàn làm việc",
+          "realWidthCm": 60,
+          "desc": "Khung tròn mềm mại với thuyền buồm mạ vàng, dễ tạo điểm nhấn trên tường nhỏ.",
+          "material": "Tranh mạ vàng 24K + khung tròn",
+          "dims": "Ø60 cm",
+          "tags": {
+            "phongCach": "phong thuỷ, tranh tròn",
+            "mau": [
+              "vàng"
+            ],
+            "phongHop": [
+              "lối vào",
+              "phòng khách"
+            ],
+            "congDung": [
+              "thuận buồm xuôi gió"
+            ]
+          },
+          "thumbnail": "/images/decor-vang/vang-tranh-thuyen-tron.jpg",
+          "cutoutImage": "/images/decor-vang/vang-tranh-thuyen-tron.jpg",
+          "productUrl": "/decor-vang/products/vang-tranh-thuyen-tron"
+        },
+        {
+          "id": "vang-tung-hac",
+          "name": "Tranh tùng hạc diên niên mạ vàng",
+          "price": 2650000,
+          "category": "art",
+          "placementHint": "treo phòng khách, phòng thờ hoặc không gian trang trọng",
+          "realWidthCm": 80,
+          "desc": "Tùng hạc diên niên mạ vàng tượng trưng trường thọ, bình an và khí chất trang trọng.",
+          "material": "Tranh mạ vàng 24K + khung gỗ",
+          "dims": "80 × 60 cm",
+          "tags": {
+            "phongCach": "truyền thống, phong thuỷ",
+            "mau": [
+              "vàng"
+            ],
+            "phongHop": [
+              "phòng khách",
+              "phòng thờ"
+            ],
+            "congDung": [
+              "trường thọ",
+              "bình an"
+            ]
+          },
+          "thumbnail": "/images/decor-vang/vang-tung-hac.jpg",
+          "cutoutImage": "/images/decor-vang/vang-tung-hac.jpg",
+          "productUrl": "/decor-vang/products/vang-tung-hac"
+        }
+      ]
+    },
+    "in-tranh": {
+      "id": "shop-in-tranh",
+      "slug": "in-tranh",
+      "name": "Printek — Xưởng in tranh theo yêu cầu",
+      "tagline": "In tranh canvas mọi kích thước, mọi mẫu mã — đã có khung, giao toàn quốc",
+      "inspiredBy": "Clone từ cửa hàng Printek.vn (Hà Nội) — tên/giá/ảnh sản phẩm thật",
+      "currency": "VND",
+      "stagingProfile": {
+        "maxProducts": 1,
+        "previewCount": 2,
+        "previewMode": "multi-single",
+        "defaultStyle": "gallery",
+        "prompt": "Store tranh canvas: mỗi ảnh preview chỉ treo đúng một bức tranh được chọn lên tường phù hợp. Không treo nhiều tranh trong cùng một ảnh, không thêm tranh phụ, không đổi nội dung artwork, không thêm chữ/watermark, giữ đúng tỉ lệ khung tranh.",
+        "questions": [
+          {
+            "id": "phongHop",
+            "text": "Bạn muốn treo tranh ở không gian nào?",
+            "chips": [
+              {
+                "label": "Phòng khách",
+                "value": "living",
+                "tags": {
+                  "phongHop": [
+                    "phòng khách"
+                  ]
+                },
+                "prompt": "Treo một bức tranh trên mảng tường chính của phòng khách."
+              },
+              {
+                "label": "Phòng ngủ",
+                "value": "bedroom",
+                "tags": {
+                  "phongHop": [
+                    "phòng ngủ"
+                  ]
+                },
+                "prompt": "Treo một bức tranh nhẹ nhàng, ấm và không quá rực."
+              },
+              {
+                "label": "Văn phòng",
+                "value": "office",
+                "tags": {
+                  "phongHop": [
+                    "văn phòng"
+                  ]
+                },
+                "prompt": "Treo một bức tranh trang trọng sau bàn làm việc hoặc tường văn phòng."
+              },
+              {
+                "label": "Phòng trà/quán",
+                "value": "tea",
+                "tags": {
+                  "phongHop": [
+                    "phòng trà",
+                    "quán cafe"
+                  ]
+                },
+                "prompt": "Treo một bức tranh tạo không khí thư thái, nghệ thuật."
+              }
+            ]
+          },
+          {
+            "id": "guTranh",
+            "text": "Bạn muốn xem thử gu tranh nào?",
+            "chips": [
+              {
+                "label": "Indochine",
+                "value": "indochine",
+                "tags": {
+                  "phongCach": [
+                    "Indochine"
+                  ]
+                },
+                "prompt": "Ưu tiên tranh phong cách Đông Dương."
+              },
+              {
+                "label": "Phong thuỷ",
+                "value": "fengshui",
+                "tags": {
+                  "phongCach": [
+                    "phong thuỷ"
+                  ],
+                  "ynghia": [
+                    "tài lộc",
+                    "may mắn"
+                  ]
+                },
+                "prompt": "Ưu tiên tranh phong thuỷ tài lộc."
+              },
+              {
+                "label": "Tối giản/trừu tượng",
+                "value": "abstract",
+                "tags": {
+                  "phongCach": [
+                    "trừu tượng hiện đại"
+                  ],
+                  "tongMau": [
+                    "trung tính"
+                  ]
+                },
+                "prompt": "Ưu tiên tranh hiện đại, ít chi tiết."
+              },
+              {
+                "label": "Tông ấm",
+                "value": "warm",
+                "tags": {
+                  "tongMau": [
+                    "ấm",
+                    "vàng",
+                    "đỏ"
+                  ]
+                },
+                "prompt": "Ưu tiên tranh tông ấm, tạo cảm giác gần gũi."
+              }
+            ]
+          },
+          {
+            "id": "tamGia",
+            "text": "Bạn muốn xem tranh trong tầm giá nào?",
+            "chips": [
+              {
+                "label": "Dễ mua",
+                "value": "mid",
+                "tags": {
+                  "tamGia": [
+                    "trung"
+                  ]
+                },
+                "prompt": "Ưu tiên tranh tầm giá dễ mua."
+              },
+              {
+                "label": "Cao cấp",
+                "value": "high",
+                "tags": {
+                  "tamGia": [
+                    "cao"
+                  ]
+                },
+                "prompt": "Ưu tiên tranh khổ lớn hoặc giá cao hơn, làm điểm nhấn chính."
+              },
+              {
+                "label": "Không quan trọng",
+                "value": "any",
+                "tags": {},
+                "prompt": "Không giới hạn giá, ưu tiên tranh hợp gu và không gian."
+              }
+            ]
+          }
+        ]
+      },
+      "theme": {
+        "bg": "#f4f6f8",
+        "ink": "#1c2530",
+        "brand": "#0e8074",
+        "brandSoft": "#dcefec",
+        "accent": "#e0653b"
+      },
+      "hero": "/images/in-tranh/tranh-song-bien-nhat.jpg",
+      "products": [
+        {
+          "id": "tranh-song-bien-nhat",
+          "name": "Tranh sóng biển phong cách Nhật Bản – MS030",
+          "price": 1323000,
+          "category": "art",
+          "thumbnail": "/images/in-tranh/tranh-song-bien-nhat.jpg",
+          "cutoutImage": "/images/in-tranh/tranh-song-bien-nhat.jpg",
+          "productUrl": "/in-tranh/products/tranh-song-bien-nhat",
+          "placementHint": "treo phòng khách, quán cafe hoặc không gian Á Đông",
+          "realWidthCm": 120,
+          "desc": "Sóng biển cuộn với mặt trời đỏ và hạc bay, đậm chất Nhật Bản. In canvas độ nét cao, đã căng khung sẵn.",
+          "material": "Canvas in UV + khung composite",
+          "dims": "120 × 80 cm",
+          "tags": {
+            "phongCach": "Nhật Bản, sóng biển",
+            "tongMau": [
+              "xanh",
+              "đỏ"
+            ],
+            "phongHop": [
+              "phòng khách",
+              "quán cafe"
+            ],
+            "menh": [
+              "Thủy"
+            ],
+            "kichThuoc": "lớn",
+            "tamGia": "cao"
+          },
+          "tagList": [
+            "Nhật Bản, sóng biển",
+            "xanh",
+            "đỏ",
+            "phòng khách",
+            "quán cafe",
+            "Thủy",
+            "lớn",
+            "cao"
+          ]
+        },
+        {
+          "id": "tranh-canvas-truu-tuong",
+          "name": "Tranh canvas trừu tượng nghệ thuật – MS028",
+          "price": 673000,
+          "category": "art",
+          "thumbnail": "/images/in-tranh/tranh-canvas-truu-tuong.jpg",
+          "cutoutImage": "/images/in-tranh/tranh-canvas-truu-tuong.jpg",
+          "productUrl": "/in-tranh/products/tranh-canvas-truu-tuong",
+          "placementHint": "treo phòng khách, văn phòng hoặc sảnh",
+          "realWidthCm": 90,
+          "desc": "Nét trừu tượng hiện đại, tông tối sang trọng. Tạo điểm nhấn nghệ thuật cho bức tường lớn.",
+          "material": "Canvas in UV + khung composite",
+          "dims": "90 × 60 cm",
+          "tags": {
+            "phongCach": "trừu tượng hiện đại",
+            "tongMau": [
+              "tối",
+              "trung tính"
+            ],
+            "phongHop": [
+              "phòng khách",
+              "văn phòng"
+            ],
+            "kichThuoc": "lớn",
+            "tamGia": "trung"
+          },
+          "tagList": [
+            "trừu tượng hiện đại",
+            "tối",
+            "trung tính",
+            "phòng khách",
+            "văn phòng",
+            "lớn",
+            "trung"
+          ]
+        },
+        {
+          "id": "tranh-thac-nuoc-phong-thuy",
+          "name": "Tranh thác nước phong thuỷ tài lộc – MS026",
+          "price": 1323000,
+          "category": "art",
+          "thumbnail": "/images/in-tranh/tranh-thac-nuoc-phong-thuy.jpg",
+          "cutoutImage": "/images/in-tranh/tranh-thac-nuoc-phong-thuy.jpg",
+          "productUrl": "/in-tranh/products/tranh-thac-nuoc-phong-thuy",
+          "placementHint": "treo phòng khách hoặc sau lưng bàn làm việc, đón tài lộc",
+          "realWidthCm": 80,
+          "desc": "Thác nước xanh mát tượng trưng tiền tài chảy về. Bố cục đứng, hợp treo nơi trang trọng.",
+          "material": "Canvas in UV + khung composite",
+          "dims": "80 × 120 cm",
+          "tags": {
+            "phongCach": "phong thuỷ, phong cảnh",
+            "tongMau": [
+              "xanh"
+            ],
+            "phongHop": [
+              "phòng khách",
+              "văn phòng"
+            ],
+            "menh": [
+              "Thủy",
+              "Mộc"
+            ],
+            "ynghia": [
+              "tài lộc",
+              "may mắn"
+            ],
+            "kichThuoc": "lớn",
+            "tamGia": "cao"
+          },
+          "tagList": [
+            "phong thuỷ, phong cảnh",
+            "xanh",
+            "phòng khách",
+            "văn phòng",
+            "Thủy",
+            "Mộc",
+            "tài lộc",
+            "may mắn",
+            "lớn",
+            "cao"
+          ]
+        },
+        {
+          "id": "tranh-hoa-sen-khach-san",
+          "name": "Tranh hoa sen trang trí khách sạn – MS023",
+          "price": 516000,
+          "category": "art",
+          "thumbnail": "/images/in-tranh/tranh-hoa-sen-khach-san.jpg",
+          "cutoutImage": "/images/in-tranh/tranh-hoa-sen-khach-san.jpg",
+          "productUrl": "/in-tranh/products/tranh-hoa-sen-khach-san",
+          "placementHint": "treo phòng khách, sảnh khách sạn hoặc lối vào",
+          "realWidthCm": 100,
+          "desc": "Hoa sen hồng nở lớn trên nền sáng, sang trọng mà thanh tịnh. Phù hợp không gian cao cấp.",
+          "material": "Canvas in UV + khung composite",
+          "dims": "100 × 70 cm",
+          "tags": {
+            "phongCach": "hoa, sang trọng",
+            "tongMau": [
+              "hồng",
+              "sáng"
+            ],
+            "phongHop": [
+              "khách sạn",
+              "phòng khách",
+              "lối vào"
+            ],
+            "menh": [
+              "Mộc"
+            ],
+            "ynghia": [
+              "thanh cao"
+            ],
+            "kichThuoc": "lớn",
+            "tamGia": "trung"
+          },
+          "tagList": [
+            "hoa, sang trọng",
+            "hồng",
+            "sáng",
+            "khách sạn",
+            "phòng khách",
+            "lối vào",
+            "Mộc",
+            "thanh cao",
+            "lớn",
+            "trung"
+          ]
+        },
+        {
+          "id": "tranh-uyen-uong-hoang-hon",
+          "name": "Tranh đôi chim uyên ương dưới hoàng hôn – MS017",
+          "price": 1009000,
+          "category": "art",
+          "thumbnail": "/images/in-tranh/tranh-uyen-uong-hoang-hon.jpg",
+          "cutoutImage": "/images/in-tranh/tranh-uyen-uong-hoang-hon.jpg",
+          "productUrl": "/in-tranh/products/tranh-uyen-uong-hoang-hon",
+          "placementHint": "treo phòng ngủ hoặc phòng khách, biểu tượng đôi lứa",
+          "realWidthCm": 110,
+          "desc": "Đôi chim bên đầm lau vàng dưới ánh hoàng hôn ấm. Ý nghĩa hạnh phúc, gắn bó lứa đôi.",
+          "material": "Canvas in UV + khung composite",
+          "dims": "110 × 60 cm",
+          "tags": {
+            "phongCach": "chim muông, hoài niệm",
+            "tongMau": [
+              "ấm",
+              "vàng"
+            ],
+            "phongHop": [
+              "phòng ngủ",
+              "phòng khách"
+            ],
+            "ynghia": [
+              "hạnh phúc lứa đôi"
+            ],
+            "kichThuoc": "lớn",
+            "tamGia": "cao"
+          },
+          "tagList": [
+            "chim muông, hoài niệm",
+            "ấm",
+            "vàng",
+            "phòng ngủ",
+            "phòng khách",
+            "hạnh phúc lứa đôi",
+            "lớn",
+            "cao"
+          ]
+        },
+        {
+          "id": "tranh-doi-hac-indochine",
+          "name": "Tranh đôi hạc trắng phong cách Indochine – MS015",
+          "price": 736000,
+          "category": "art",
+          "thumbnail": "/images/in-tranh/tranh-doi-hac-indochine.jpg",
+          "cutoutImage": "/images/in-tranh/tranh-doi-hac-indochine.jpg",
+          "productUrl": "/in-tranh/products/tranh-doi-hac-indochine",
+          "placementHint": "treo phòng khách, phòng trà phong cách Đông Dương",
+          "realWidthCm": 70,
+          "desc": "Đôi hạc trắng bên sen với vầng trăng đỏ, đậm chất Indochine. Sang trọng, hoài cổ.",
+          "material": "Canvas in UV + khung composite",
+          "dims": "70 × 100 cm",
+          "tags": {
+            "phongCach": "Indochine",
+            "tongMau": [
+              "trung tính",
+              "đỏ"
+            ],
+            "phongHop": [
+              "phòng khách",
+              "phòng trà"
+            ],
+            "ynghia": [
+              "trường thọ",
+              "sang trọng"
+            ],
+            "kichThuoc": "lớn",
+            "tamGia": "trung"
+          },
+          "tagList": [
+            "Indochine",
+            "trung tính",
+            "đỏ",
+            "phòng khách",
+            "phòng trà",
+            "trường thọ",
+            "sang trọng",
+            "lớn",
+            "trung"
+          ]
+        },
+        {
+          "id": "tranh-ca-chep-tai-loc",
+          "name": "Tranh cá chép hút Tài – Lộc – May mắn – MS007",
+          "price": 1134000,
+          "category": "art",
+          "thumbnail": "/images/in-tranh/tranh-ca-chep-tai-loc.jpg",
+          "cutoutImage": "/images/in-tranh/tranh-ca-chep-tai-loc.jpg",
+          "productUrl": "/in-tranh/products/tranh-ca-chep-tai-loc",
+          "placementHint": "treo phòng khách hoặc văn phòng, khổ ngang sau sofa",
+          "realWidthCm": 140,
+          "desc": "Đàn cá chép bơi giữa sen — biểu tượng tài lộc, dư dả. Khổ ngang panorama đẹp mắt.",
+          "material": "Canvas in UV + khung composite",
+          "dims": "140 × 60 cm",
+          "tags": {
+            "phongCach": "phong thuỷ, cá chép",
+            "tongMau": [
+              "ấm"
+            ],
+            "phongHop": [
+              "phòng khách",
+              "văn phòng"
+            ],
+            "menh": [
+              "Thủy",
+              "Mộc"
+            ],
+            "ynghia": [
+              "tài lộc",
+              "dư dả"
+            ],
+            "kichThuoc": "lớn",
+            "tamGia": "cao"
+          },
+          "tagList": [
+            "phong thuỷ, cá chép",
+            "ấm",
+            "phòng khách",
+            "văn phòng",
+            "Thủy",
+            "Mộc",
+            "tài lộc",
+            "dư dả",
+            "lớn",
+            "cao"
+          ]
+        },
+        {
+          "id": "tranh-tron-ca-chep-sen",
+          "name": "Tranh tròn cá chép hoa sen – YX-8072",
+          "price": 673000,
+          "category": "art",
+          "thumbnail": "/images/in-tranh/tranh-tron-ca-chep-sen.jpg",
+          "cutoutImage": "/images/in-tranh/tranh-tron-ca-chep-sen.jpg",
+          "productUrl": "/in-tranh/products/tranh-tron-ca-chep-sen",
+          "placementHint": "treo trên kệ trang trí, lối vào hoặc phòng trà",
+          "realWidthCm": 60,
+          "desc": "Tranh tròn cá chép & sen trên nền xanh đêm lấp lánh. Dáng tròn độc đáo, hợp tân cổ điển.",
+          "material": "Canvas in UV + khung tròn",
+          "dims": "Ø60 cm",
+          "tags": {
+            "phongCach": "tân cổ điển, tranh tròn",
+            "tongMau": [
+              "xanh đêm"
+            ],
+            "phongHop": [
+              "lối vào",
+              "phòng trà"
+            ],
+            "dacDiem": "tròn",
+            "ynghia": [
+              "tài lộc"
+            ],
+            "kichThuoc": "lớn",
+            "tamGia": "trung"
+          },
+          "tagList": [
+            "tân cổ điển, tranh tròn",
+            "xanh đêm",
+            "lối vào",
+            "phòng trà",
+            "tròn",
+            "tài lộc",
+            "lớn",
+            "trung"
+          ]
+        },
+        {
+          "id": "tranh-sen-hac-indochine",
+          "name": "Tranh sen & hạc phong cách Indochine",
+          "price": 1150000,
+          "category": "art",
+          "thumbnail": "/images/in-tranh/tranh-sen-hac-indochine.jpg",
+          "cutoutImage": "/images/in-tranh/tranh-sen-hac-indochine.jpg",
+          "productUrl": "/in-tranh/products/tranh-sen-hac-indochine",
+          "placementHint": "treo sảnh, phòng khách lớn phong cách Đông Dương",
+          "realWidthCm": 90,
+          "desc": "Đầm sen với đàn cò trắng và vầng trăng đỏ, hoạ tiết Đông Dương tinh tế. Đã có khung.",
+          "material": "Canvas in UV + khung composite",
+          "dims": "90 × 120 cm",
+          "tags": {
+            "phongCach": "Indochine",
+            "tongMau": [
+              "trung tính"
+            ],
+            "phongHop": [
+              "sảnh",
+              "phòng khách"
+            ],
+            "menh": [
+              "Mộc"
+            ],
+            "ynghia": [
+              "thanh cao"
+            ],
+            "kichThuoc": "lớn",
+            "tamGia": "cao"
+          },
+          "tagList": [
+            "Indochine",
+            "trung tính",
+            "sảnh",
+            "phòng khách",
+            "Mộc",
+            "thanh cao",
+            "lớn",
+            "cao"
+          ]
+        },
+        {
+          "id": "tranh-chinoiserie-hoa-la",
+          "name": "Tranh hoa lá chim chinoiserie",
+          "price": 690000,
+          "category": "art",
+          "thumbnail": "/images/in-tranh/tranh-chinoiserie-hoa-la.jpg",
+          "cutoutImage": "/images/in-tranh/tranh-chinoiserie-hoa-la.jpg",
+          "productUrl": "/in-tranh/products/tranh-chinoiserie-hoa-la",
+          "placementHint": "treo phòng ngủ, phòng khách tông pastel",
+          "realWidthCm": 80,
+          "desc": "Cành hoa, bướm và chim trên nền xanh ngọc — phong cách chinoiserie nhẹ nhàng, nữ tính.",
+          "material": "Canvas in UV + khung composite",
+          "dims": "80 × 80 cm",
+          "tags": {
+            "phongCach": "chinoiserie, nữ tính",
+            "tongMau": [
+              "xanh ngọc",
+              "pastel"
+            ],
+            "phongHop": [
+              "phòng ngủ",
+              "phòng khách"
+            ],
+            "menh": [
+              "Mộc"
+            ],
+            "kichThuoc": "lớn",
+            "tamGia": "trung"
+          },
+          "tagList": [
+            "chinoiserie, nữ tính",
+            "xanh ngọc",
+            "pastel",
+            "phòng ngủ",
+            "phòng khách",
+            "Mộc",
+            "lớn",
+            "trung"
+          ]
+        },
+        {
+          "id": "tranh-tron-son-thuy",
+          "name": "Tranh tròn sơn thuỷ bán nguyệt",
+          "price": 850000,
+          "category": "art",
+          "thumbnail": "/images/in-tranh/tranh-tron-son-thuy.jpg",
+          "cutoutImage": "/images/in-tranh/tranh-tron-son-thuy.jpg",
+          "productUrl": "/in-tranh/products/tranh-tron-son-thuy",
+          "placementHint": "treo phòng trà, phòng khách tân cổ điển",
+          "realWidthCm": 60,
+          "desc": "Sơn thuỷ thuỷ mặc trong khung tròn, treo trên nền đá hoa cương. Tĩnh tại, sang trọng.",
+          "material": "Canvas in UV + khung tròn",
+          "dims": "Ø60 cm",
+          "tags": {
+            "phongCach": "thuỷ mặc, tân cổ điển",
+            "tongMau": [
+              "đơn sắc"
+            ],
+            "phongHop": [
+              "phòng trà",
+              "phòng khách"
+            ],
+            "dacDiem": "tròn",
+            "kichThuoc": "lớn",
+            "tamGia": "trung"
+          },
+          "tagList": [
+            "thuỷ mặc, tân cổ điển",
+            "đơn sắc",
+            "phòng trà",
+            "phòng khách",
+            "tròn",
+            "lớn",
+            "trung"
+          ]
+        },
+        {
+          "id": "tranh-dao-canvas-xam",
+          "name": "Tranh hoa đào canvas tông xám",
+          "price": 720000,
+          "category": "art",
+          "thumbnail": "/images/in-tranh/tranh-dao-canvas-xam.jpg",
+          "cutoutImage": "/images/in-tranh/tranh-dao-canvas-xam.jpg",
+          "productUrl": "/in-tranh/products/tranh-dao-canvas-xam",
+          "placementHint": "treo phòng khách, phòng ngủ phong cách tối giản",
+          "realWidthCm": 70,
+          "desc": "Cành đào hồng nhẹ trên nền canvas xám trừu tượng. Hiện đại, tinh tế, dễ phối nội thất.",
+          "material": "Canvas in UV + khung composite",
+          "dims": "70 × 100 cm",
+          "tags": {
+            "phongCach": "tối giản, hoa đào",
+            "tongMau": [
+              "xám",
+              "hồng"
+            ],
+            "phongHop": [
+              "phòng khách",
+              "phòng ngủ"
+            ],
+            "kichThuoc": "lớn",
+            "tamGia": "trung"
+          },
+          "tagList": [
+            "tối giản, hoa đào",
+            "xám",
+            "hồng",
+            "phòng khách",
+            "phòng ngủ",
+            "lớn",
+            "trung"
+          ]
+        },
+        {
+          "id": "tranh-canh-vang-nen-den",
+          "name": "Tranh cành vàng nền đen sang trọng",
+          "price": 780000,
+          "category": "art",
+          "thumbnail": "/images/in-tranh/tranh-canh-vang-nen-den.jpg",
+          "cutoutImage": "/images/in-tranh/tranh-canh-vang-nen-den.jpg",
+          "productUrl": "/in-tranh/products/tranh-canh-vang-nen-den",
+          "placementHint": "treo phòng khách, phòng làm việc tông tối",
+          "realWidthCm": 90,
+          "desc": "Cành cây mạ vàng vươn trên nền đen tuyền, hiệu ứng nổi khối. Đẳng cấp, hợp nội thất luxury.",
+          "material": "Canvas in UV + khung composite",
+          "dims": "90 × 60 cm",
+          "tags": {
+            "phongCach": "luxury, hiện đại",
+            "tongMau": [
+              "đen",
+              "vàng"
+            ],
+            "phongHop": [
+              "phòng khách",
+              "phòng làm việc"
+            ],
+            "ynghia": [
+              "đẳng cấp"
+            ],
+            "kichThuoc": "lớn",
+            "tamGia": "trung"
+          },
+          "tagList": [
+            "luxury, hiện đại",
+            "đen",
+            "vàng",
+            "phòng khách",
+            "phòng làm việc",
+            "đẳng cấp",
+            "lớn",
+            "trung"
+          ]
+        },
+        {
+          "id": "tranh-mai-do-thuy-mac",
+          "name": "Tranh hoa mai đỏ thuỷ mặc",
+          "price": 640000,
+          "category": "art",
+          "thumbnail": "/images/in-tranh/tranh-mai-do-thuy-mac.jpg",
+          "cutoutImage": "/images/in-tranh/tranh-mai-do-thuy-mac.jpg",
+          "productUrl": "/in-tranh/products/tranh-mai-do-thuy-mac",
+          "placementHint": "treo phòng trà, phòng thờ hoặc lối vào",
+          "realWidthCm": 60,
+          "desc": "Cành mai đỏ vẽ kiểu thuỷ mặc trên nền trắng. Mộc mạc, mang không khí Tết và sự may mắn.",
+          "material": "Canvas in UV + khung composite",
+          "dims": "60 × 90 cm",
+          "tags": {
+            "phongCach": "thuỷ mặc, truyền thống",
+            "tongMau": [
+              "đỏ",
+              "trắng"
+            ],
+            "phongHop": [
+              "phòng trà",
+              "phòng thờ"
+            ],
+            "menh": [
+              "Hỏa"
+            ],
+            "ynghia": [
+              "may mắn",
+              "Tết"
+            ],
+            "kichThuoc": "lớn",
+            "tamGia": "trung"
+          },
+          "tagList": [
+            "thuỷ mặc, truyền thống",
+            "đỏ",
+            "trắng",
+            "phòng trà",
+            "phòng thờ",
+            "Hỏa",
+            "may mắn",
+            "Tết",
+            "lớn",
+            "trung"
+          ]
+        },
+        {
+          "id": "tranh-thieu-nu-indochine",
+          "name": "Tranh thiếu nữ Indochine (phòng trà)",
+          "price": 950000,
+          "category": "art",
+          "thumbnail": "/images/in-tranh/tranh-thieu-nu-indochine.jpg",
+          "cutoutImage": "/images/in-tranh/tranh-thieu-nu-indochine.jpg",
+          "productUrl": "/in-tranh/products/tranh-thieu-nu-indochine",
+          "placementHint": "treo phòng trà, quán cafe phong cách Đông Dương",
+          "realWidthCm": 70,
+          "desc": "Thiếu nữ bên hoa lá phong cách Đông Dương xưa. Gam trầm hoài cổ, hợp không gian trà & cafe.",
+          "material": "Canvas in UV + khung composite",
+          "dims": "70 × 100 cm",
+          "tags": {
+            "phongCach": "Indochine, hoài cổ",
+            "tongMau": [
+              "trầm"
+            ],
+            "phongHop": [
+              "phòng trà",
+              "quán cafe"
+            ],
+            "kichThuoc": "lớn",
+            "tamGia": "trung"
+          },
+          "tagList": [
+            "Indochine, hoài cổ",
+            "trầm",
+            "phòng trà",
+            "quán cafe",
+            "lớn",
+            "trung"
+          ]
+        }
+      ]
+    }
+  }
+}
