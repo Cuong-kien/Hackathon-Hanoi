@@ -15,7 +15,7 @@ export default function VStageIntegration({ catalog, currentId }) {
       {/* Fallback /virtualstage.js cùng repo cho tới khi Session B chốt <widget-domain> (contract §3). */}
       <Script
         id={`vstage-widget-${suffix}`}
-        src="/virtualstage.js?v=demo-20260627-4"
+        src="/virtualstage.js?v=demo-20260627-5"
         data-speculative="true"
         strategy="afterInteractive"
         data-shop-id={catalog.shopId}

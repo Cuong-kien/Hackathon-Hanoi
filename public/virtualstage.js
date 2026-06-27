@@ -215,8 +215,14 @@
   style.textContent = [
     ":host{all:initial}",
     "*{box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}",
-    ".fab{position:fixed;z-index:2147483000;bottom:24px;right:24px;background:#111;color:#fff;border:none;border-radius:999px;padding:14px 20px;font-size:15px;font-weight:500;cursor:pointer;box-shadow:0 8px 28px rgba(0,0,0,.28);transition:transform .15s;display:inline-flex;align-items:center;justify-content:center;gap:8px}",
+    ".fab{position:fixed;z-index:2147483000;bottom:24px;right:24px;background:#111;color:#fff;border:none;border-radius:999px;padding:14px 20px;font-size:15px;font-weight:500;cursor:pointer;box-shadow:0 8px 28px rgba(0,0,0,.28);transition:transform .15s,background .2s,box-shadow .2s;display:inline-flex;align-items:center;justify-content:center;gap:8px}",
     ".fab:hover{transform:translateY(-2px)}.fab.bottom-left{right:auto;left:24px}.fab.hidden{display:none}",
+    ".fab.loading{animation:fabJump .85s ease-in-out infinite;box-shadow:0 12px 34px rgba(0,0,0,.35)}",
+    ".fab.done{background:#0f7b45;animation:fabDone .55s ease-out 1;box-shadow:0 12px 36px rgba(15,123,69,.35)}",
+    ".fab.done::after{content:'';position:absolute;inset:-7px;border:2px solid rgba(15,123,69,.45);border-radius:999px;animation:doneRing 1.1s ease-out 2;pointer-events:none}",
+    "@keyframes fabJump{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}",
+    "@keyframes fabDone{0%{transform:scale(.95)}55%{transform:scale(1.06)}100%{transform:scale(1)}}",
+    "@keyframes doneRing{0%{opacity:.75;transform:scale(.94)}100%{opacity:0;transform:scale(1.24)}}",
     ".panel{position:fixed;z-index:2147483001;bottom:24px;right:24px;width:min(400px,94vw);height:min(640px,86vh);background:#fff;border-radius:20px;box-shadow:0 24px 80px rgba(0,0,0,.38);display:flex;flex-direction:column;overflow:hidden}",
     ".panel.bottom-left{right:auto;left:24px}",
     ".phead{display:flex;align-items:center;gap:8px;padding:14px 16px;border-bottom:1px solid #eee;flex:0 0 auto}",
@@ -324,6 +330,7 @@
       camera: '<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle>',
       send: '<path d="m22 2-7 20-4-9-9-4 20-7z"></path><path d="M22 2 11 13"></path>',
       close: '<path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>',
+      minimize: '<path d="M5 12h14"></path>',
       pause: '<path d="M10 4H6v16h4V4z"></path><path d="M18 4h-4v16h4V4z"></path>',
       cancel: '<circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path>',
       cart: '<circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.6 12.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6l1.6-8.4H5.12"></path>',
@@ -337,6 +344,25 @@
   function setFabLabel(text) {
     if (!fab) return;
     fab.innerHTML = labelIcon("sparkles", text);
+  }
+  function setFabMode(mode, text) {
+    if (!fab) return;
+    fab.classList.remove("loading", "done");
+    if (mode) fab.classList.add(mode);
+    setFabLabel(text || cfg.buttonText);
+  }
+  function isMinimized() {
+    return panel && panel.style.display === "none";
+  }
+  function updateFabState() {
+    if (!fab || !S || !isMinimized()) return;
+    if (isBusy()) {
+      setFabMode("loading", "Đang tạo ảnh");
+    } else if (S.step === "result" || S.step === "select_preview") {
+      setFabMode("done", "Ảnh đã xong");
+    } else {
+      setFabMode("", "Tiếp tục thử");
+    }
   }
 
   var fab = document.createElement("button");
@@ -370,8 +396,7 @@
     panel.innerHTML =
       '<div class="phead">' +
       '<div class="title"><h3>Xem thử trong phòng bạn</h3><p>' + escapeHtml(S.catalog.shopName || "") + "</p></div>" +
-      '<button class="pause" type="button" aria-label="Tạm dừng" title="Tạm dừng">' + icon("pause") + "</button>" +
-      '<button class="x" type="button" aria-label="Đóng" title="Đóng">' + icon("close") + "</button></div>" +
+      '<button class="pause" type="button" aria-label="Thu nhỏ" title="Thu nhỏ">' + icon("minimize") + "</button></div>" +
       '<div class="msgs"></div>' +
       '<div class="actions initial">' +
       '<button class="uploadbtn" type="button">' + labelIcon("upload", "Tải ảnh lên") + "</button>" +
@@ -387,7 +412,6 @@
     captureInput = panel.querySelector(".file-capture");
     chatInput = panel.querySelector(".chatinput");
 
-    panel.querySelector(".x").onclick = closePanel;
     panel.querySelector(".pause").onclick = pausePanel;
     panel.querySelector(".uploadbtn").onclick = function () {
       if (isBusy()) { cancelFlow(); return; }
@@ -412,11 +436,12 @@
     if (panel && S) {
       panel.style.display = "flex";
       fab.classList.add("hidden");
-      setFabLabel(cfg.buttonText);
+      setFabMode("", cfg.buttonText);
       return;
     }
     S = freshState();
     fab.classList.add("hidden");
+    setFabMode("", cfg.buttonText);
     buildPanel();
     botText("Chọn ảnh phòng của bạn để xem thử.");
     updateActions();
@@ -424,13 +449,13 @@
   function pausePanel() {
     if (!panel) return;
     panel.style.display = "none";
-    setFabLabel("Tiếp tục thử");
+    updateFabState();
     fab.classList.remove("hidden");
   }
   function closePanel() {
     if (panel) panel.remove();
     panel = null; S = null;
-    setFabLabel(cfg.buttonText);
+    setFabMode("", cfg.buttonText);
     fab.classList.remove("hidden");
   }
   function contactStaff() {
@@ -493,6 +518,7 @@
       chatInput.disabled = !hasRoom || busy;
       chatInput.placeholder = busy ? "Đang tạo ảnh..." : (hasRoom ? "Nhập yêu cầu chỉnh ảnh..." : "Nhập sau khi tải ảnh");
     }
+    updateFabState();
   }
   function cancelFlow() {
     if (!S || !isBusy()) return;
