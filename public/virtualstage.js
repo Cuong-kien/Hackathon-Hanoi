@@ -243,9 +243,8 @@
     ".bar{height:6px;border-radius:999px;background:#eee;overflow:hidden;margin-top:10px}",
     ".bar span{display:block;width:45%;height:100%;border-radius:999px;background:#111;animation:bar 1.4s ease-in-out infinite}",
     "@keyframes bar{0%{transform:translateX(-110%)}100%{transform:translateX(240%)}}",
-    ".loadsteps{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}",
-    ".loadsteps span{font-size:11px;color:#777;border:1px solid #eee;border-radius:999px;padding:4px 8px;background:#fafafa}",
-    ".loadsteps span.on{color:#111;border-color:#111}",
+    ".loadhint{margin-top:10px;min-height:18px;font-size:12px;color:#555;transition:opacity .25s ease}",
+    ".loadhint.fade{opacity:.25}",
     ".genimg{width:100%;border-radius:14px;display:block}",
     ".option{border:1px solid #ececec;border-radius:14px;background:#fff;padding:10px;margin-top:10px}",
     ".option:first-child{margin-top:0}",
@@ -501,6 +500,7 @@
     S.previewToken = null;
     S.spec = null; S.specFired = false;
     S.step = "await_room";
+    msgsEl.querySelectorAll(".genwrap").forEach(stopLoadingHints);
     msgsEl.querySelectorAll(".loadbox").forEach(function (box) {
       box.innerHTML = '<div class="cap">Đã hủy.</div>';
     });
@@ -557,23 +557,69 @@
     var wrap = document.createElement("div"); wrap.className = "bubble bot genwrap";
     wrap.innerHTML = loadingHtml("Đang tạo ảnh", 0);
     r.appendChild(wrap); msgsEl.appendChild(r); scroll();
+    startLoadingHints(wrap, 0);
     return wrap;
   }
   function loadingHtml(title, activeStep) {
-    var steps = ["Phân tích ảnh", "Chọn sản phẩm", "Dàn cảnh"];
     return '<div class="loadbox"><div class="loadtop"><span>' + escapeHtml(title || "Đang xử lý") +
       '</span><span class="spinner"></span></div><div class="skel"></div><div class="bar"><span></span></div>' +
-      '<div class="loadsteps">' + steps.map(function (s, i) {
-        return '<span' + (i === activeStep ? ' class="on"' : "") + ">" + s + "</span>";
-      }).join("") + "</div></div>";
+      '<div class="loadhint">Đang phân tích nhu cầu...</div></div>';
+  }
+  var LOAD_HINTS = [
+    [
+      "Đang phân tích nhu cầu...",
+      "Đang nhận diện không gian...",
+      "Đang xem vị trí có thể đặt sản phẩm...",
+      "Đang bỏ qua thông tin ảnh đã có..."
+    ],
+    [
+      "Đang tìm sản phẩm phù hợp...",
+      "Đang ưu tiên các mẫu bán chạy...",
+      "Đang lọc theo tag của cửa hàng...",
+      "Đang chọn kích thước hợp với ảnh..."
+    ],
+    [
+      "Đang dựng thử trong không gian của bạn...",
+      "Đang căn phối cảnh và tỉ lệ...",
+      "Đang cân ánh sáng và bóng đổ...",
+      "Đang hoàn thiện ảnh preview..."
+    ]
+  ];
+  function stopLoadingHints(wrap) {
+    if (!wrap || !wrap._hintTimer) return;
+    clearInterval(wrap._hintTimer);
+    wrap._hintTimer = null;
+  }
+  function startLoadingHints(wrap, step) {
+    if (!wrap) return;
+    stopLoadingHints(wrap);
+    wrap._hintStep = step || 0;
+    wrap._hintIndex = 0;
+    updateLoadingHint(wrap);
+    wrap._hintTimer = setInterval(function () {
+      if (!wrap.isConnected) { stopLoadingHints(wrap); return; }
+      wrap._hintIndex = (wrap._hintIndex || 0) + 1;
+      updateLoadingHint(wrap);
+    }, 2400);
+  }
+  function updateLoadingHint(wrap) {
+    var hint = wrap && wrap.querySelector(".loadhint");
+    if (!hint) return;
+    var list = LOAD_HINTS[wrap._hintStep || 0] || LOAD_HINTS[0];
+    hint.classList.add("fade");
+    setTimeout(function () {
+      if (!hint.isConnected) return;
+      hint.textContent = list[(wrap._hintIndex || 0) % list.length];
+      hint.classList.remove("fade");
+    }, 180);
   }
   function setLoadingText(wrap, title, activeStep) {
     if (!wrap) return;
     var titleEl = wrap.querySelector(".loadtop span:first-child");
     if (titleEl) titleEl.textContent = title || "Đang xử lý";
-    wrap.querySelectorAll(".loadsteps span").forEach(function (s, i) {
-      s.classList.toggle("on", i === activeStep);
-    });
+    if (typeof activeStep === "number" && wrap._hintStep !== activeStep) {
+      startLoadingHints(wrap, activeStep);
+    }
   }
   // v0.4.0: chỉ hiện hotspot khi /api/stage định vị được chính sản phẩm trên ảnh đã gen.
   // Không dùng vùng "khả thi" từ ảnh gốc để tránh marker sai/vague.
@@ -848,12 +894,14 @@
       var results = items.filter(function (x) { return x.ok && x.data && x.data.image; });
       if (!results.length) {
         wrap.classList.remove("genwrap"); wrap.className = "bubble bot";
+        stopLoadingHints(wrap);
         wrap.innerHTML = '<div class="err">Chưa tạo được ảnh xem trước cho tranh. Vui lòng thử ảnh khác.</div>';
         S.step = "select_preview";
         updateActions();
         return;
       }
       S.step = "select_preview";
+      stopLoadingHints(wrap);
       wrap.innerHTML = renderArtResultSelector(results);
       bindArtResultSelector(wrap, results);
       botText("Đã có ảnh xem trước. Tick card tranh bạn muốn xem.");
@@ -932,11 +980,13 @@
       // R-006: 1 vision pass phân tích ảnh đầu vào
       postAnalyze().then(function (a) {
         if (S.runToken !== runToken) return;
+        stopLoadingHints(thinking);
         if (thinking) thinking.remove();
         S.analysis = a;
         routeByAnalysis(a);
       }).catch(function () {
         if (S.runToken !== runToken) return;
+        stopLoadingHints(thinking);
         if (thinking) thinking.remove();
         S.analysis = null; // lỗi vision → cứ coi như tốt, không chặn luồng
         proceedGood();
@@ -1166,6 +1216,7 @@
     p.then(function (data) {
       if (S.runToken !== runToken) return;
       S.lastImage = data.image; S.step = "result";
+      stopLoadingHints(wrap);
       fillImage(wrap, data);
       updateActions();
       if (!opts.refine) {
@@ -1175,6 +1226,7 @@
     }).catch(function (err) {
       if (S.runToken !== runToken) return;
       wrap.classList.remove("genwrap"); wrap.className = "bubble bot";
+      stopLoadingHints(wrap);
       wrap.innerHTML = '<div class="err">' + escapeHtml(err.message || "Lỗi tạo ảnh") + "</div>";
       S.step = "result";
       updateActions();
